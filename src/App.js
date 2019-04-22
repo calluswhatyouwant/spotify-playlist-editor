@@ -1,11 +1,16 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import Home from './Home';
+import Auth from './Auth';
 
 const App = () => (
-    <div className="app">
-        <h1>Spotify Playlist Editor</h1>
-        <p>Insert content here!</p>
-    </div>
+    <BrowserRouter>
+        <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/auth" component={Auth} />
+        </Switch>
+    </BrowserRouter>
 );
 
 export default App;
