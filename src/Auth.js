@@ -14,7 +14,10 @@ class Auth extends Component {
     }
 
     render() {
-        return <Redirect to="/" />;
+        if (this.state.token)
+            return <Redirect to="/playlists" />;
+        else
+            return <Redirect to="/" />;
     }
 }
 

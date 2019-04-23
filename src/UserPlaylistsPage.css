@@ -1,0 +1,13 @@
+.btn {
+    border-radius: 2rem;
+}
+
+.user-playlists-page {
+    background-color: white;
+    border-radius: .25rem;
+}
+
+.load-more-button-wrapper {
+    display: flex;
+    justify-content: center;
+}
