@@ -12,6 +12,8 @@ import {
 
 import UserPlaylistList from './UserPlaylistList';
 
+import './UserPage.css';
+
 type Props = {
     history: any,
 };
@@ -66,9 +68,9 @@ class UserPage extends Component<Props, State> {
             <div className="user-playlists-page container my-4 p-4 shadow">
                 <UserPageHeader user={user} />
                 <UserPlaylistList
-                  playlists={userPlaylists}
-                  handleClick={this.loadMorePlaylists}
-                  hasNextPage={page.hasNext()}
+                    playlists={userPlaylists}
+                    handleClick={this.loadMorePlaylists}
+                    hasNextPage={page.hasNext()}
                 />
             </div>
         ) : null;
@@ -77,15 +79,20 @@ class UserPage extends Component<Props, State> {
 
 type HeaderProps = {
     user: PrivateUser,
-}
+};
 
 const UserPageHeader = ({ user }: HeaderProps) => (
-    <div class="media p-3">
-        <img src={user.images[0].url} alt="Avatar" className="rounded-circle" />
+    <div class="user-page-header media p-3">
+        <img
+            src={user.images[0].url}
+            alt="Avatar"
+            className="user-image rounded-circle align-self-center"
+        />
         <div class="media-body align-self-center">
-        <h1 className="text-center py-4 display-4">
-            Welcome, {user.displayName}!
-        </h1></div>
+            <h1 className="text-center py-4 display-4">
+                Welcome, {user.displayName}!
+            </h1>
+        </div>
     </div>
 );
 

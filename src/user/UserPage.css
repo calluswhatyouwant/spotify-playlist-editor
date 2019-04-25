@@ -1,0 +1,10 @@
+@media (max-width: 767.98px) {
+    .user-page-header {
+        display: grid;
+    }
+}
+
+.user-image {
+    border: .25rem solid #473673;
+    margin: 0 auto;
+}

@@ -18,14 +18,17 @@ const UserPlaylistList = ({ playlists, handleClick, hasNextPage }: Props) => {
 
     const loadMoreButton = (
         <div className="load-more-button-wrapper">
-            <button className="btn btn-outline-dark" onClick={handleClick}>
-                Load more playlists
+            <button
+                className="btn btn-dark load-more-button"
+                onClick={handleClick}
+            >
+                <h4 className="px-3 mb-0">LOAD MORE PLAYLISTS</h4>
             </button>
         </div>
     );
 
     return (
-        <div className="">
+        <div>
             <h2 className="mb-4">These are your playlists</h2>
             {playlistListItems}
             {hasNextPage && loadMoreButton}

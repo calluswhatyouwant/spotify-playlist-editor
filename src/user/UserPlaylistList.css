@@ -7,6 +7,10 @@
     border-radius: .25rem;
 }
 
+.load-more-button {
+    background-color: #57428C;
+}
+
 .load-more-button-wrapper {
     display: flex;
     justify-content: center;
