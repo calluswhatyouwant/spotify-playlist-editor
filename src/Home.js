@@ -23,7 +23,7 @@ const buildAuthUrl = () => {
         client_id: 'SPOTIFY_CLIENT_ID',
         response_type: 'token',
         redirect_uri: 'http://localhost:3000/auth',
-        scope: 'playlist-read-private playlist-read-collaborative'
+        scope: 'playlist-read-private playlist-read-collaborative playlist-modify-public playlist-modify-private'
     };
     return `https://accounts.spotify.com/authorize?${encodeQueryParams(params)}`;
 }
