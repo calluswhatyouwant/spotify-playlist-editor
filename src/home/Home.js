@@ -9,6 +9,11 @@ const Home = () => (
         <div className="text-center">
             <h1 className="display-1">Spotify Playlist Editor</h1>
             <h4>Sort your playlists any way you want.</h4>
+            <h5>
+                <i class="fas fa-exclamation-triangle" /> Note this is still a
+                work in progress, so use it with caution.{' '}
+                <i class="fas fa-exclamation-triangle" />
+            </h5>
             <a
                 className="btn btn-lg btn-outline-light my-2"
                 href={buildAuthUrl()}
@@ -21,7 +26,7 @@ const Home = () => (
 
 const buildAuthUrl = () => {
     const params = {
-        client_id: 'SPOTIFY_CLIENT_ID',
+        client_id: '77edb9a2465445fc8b366da5105e7add',
         response_type: 'token',
         redirect_uri: 'http://localhost:3000/auth',
         scope:
