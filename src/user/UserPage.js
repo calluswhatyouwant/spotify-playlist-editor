@@ -7,11 +7,10 @@ import {
     getCurrentUserProfile,
     Page,
     PlaylistSimplified,
+    PrivateUser,
 } from 'spotify-web-sdk';
 
-import UserPlaylist from './UserPlaylist';
-
-import './UserPlaylistsPage.css';
+import UserPlaylistList from './UserPlaylistList';
 
 type Props = {
     history: any,
@@ -20,16 +19,16 @@ type Props = {
 type State = {
     page: Page<PlaylistSimplified>,
     playlists: PlaylistSimplified[],
-    userId: string,
+    user: PrivateUser,
 };
 
-class UserPlaylistsPage extends Component<Props, State> {
+class UserPage extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
             page: {},
             playlists: [],
-            userId: '',
+            user: {},
         };
     }
 
@@ -41,9 +40,9 @@ class UserPlaylistsPage extends Component<Props, State> {
                 playlists: page.items,
             })
         );
-        getCurrentUserProfile().then(userProfile =>
+        getCurrentUserProfile().then(user =>
             this.setState({
-                userId: userProfile.id,
+                user,
             })
         );
     }
@@ -58,32 +57,36 @@ class UserPlaylistsPage extends Component<Props, State> {
     };
 
     render() {
-        const { playlists, page, userId } = this.state;
+        const { playlists, page, user } = this.state;
         const userPlaylists = playlists.filter(
-            playlist => playlist.owner.id === userId
-        );
-        const playlistListItems = userPlaylists.map(playlist => (
-            <UserPlaylist playlist={playlist} />
-        ));
-        const loadMoreButton = (
-            <div className="load-more-button-wrapper">
-                <button
-                    className="btn btn-outline-dark"
-                    onClick={this.loadMorePlaylists}
-                >
-                    Load more playlists
-                </button>
-            </div>
+            playlist => playlist.owner.id === user.id
         );
 
         return page.items ? (
             <div className="user-playlists-page container my-4 p-4 shadow">
-                <h1 className="mb-4">Your playlists</h1>
-                {playlistListItems}
-                {page.hasNext() && loadMoreButton}
+                <UserPageHeader user={user} />
+                <UserPlaylistList
+                  playlists={userPlaylists}
+                  handleClick={this.loadMorePlaylists}
+                  hasNextPage={page.hasNext()}
+                />
             </div>
         ) : null;
     }
 }
 
-export default UserPlaylistsPage;
+type HeaderProps = {
+    user: PrivateUser,
+}
+
+const UserPageHeader = ({ user }: HeaderProps) => (
+    <div class="media p-3">
+        <img src={user.images[0].url} alt="Avatar" className="rounded-circle" />
+        <div class="media-body align-self-center">
+        <h1 className="text-center py-4 display-4">
+            Welcome, {user.displayName}!
+        </h1></div>
+    </div>
+);
+
+export default UserPage;
