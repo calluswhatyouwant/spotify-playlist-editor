@@ -11,17 +11,14 @@ type Props = {
     hasNextPage: boolean,
 };
 
-const UserPlaylistList = ({ playlists, handleClick, hasNextPage } : Props) => {
+const UserPlaylistList = ({ playlists, handleClick, hasNextPage }: Props) => {
     const playlistListItems = playlists.map(playlist => (
         <UserPlaylistListItem playlist={playlist} />
     ));
 
     const loadMoreButton = (
         <div className="load-more-button-wrapper">
-            <button
-                className="btn btn-outline-dark"
-                onClick={handleClick}
-            >
+            <button className="btn btn-outline-dark" onClick={handleClick}>
                 Load more playlists
             </button>
         </div>
@@ -34,7 +31,7 @@ const UserPlaylistList = ({ playlists, handleClick, hasNextPage } : Props) => {
             {hasNextPage && loadMoreButton}
         </div>
     );
-}
+};
 
 type ItemProps = {
     playlist: PlaylistSimplified,

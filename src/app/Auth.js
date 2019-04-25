@@ -3,8 +3,16 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
-class Auth extends Component {
-    constructor(props) {
+type Props = {
+    history: any,
+};
+
+type State = {
+    token: string,
+};
+
+class Auth extends Component<Props, State> {
+    constructor(props: Props) {
         super(props);
         this.state = {
             token: props.history.location.hash.match(

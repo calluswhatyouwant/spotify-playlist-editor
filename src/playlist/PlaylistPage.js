@@ -12,7 +12,7 @@ type Props = {
 };
 
 type State = {
-    playlistId: String,
+    playlistId: string,
     playlist: Playlist,
     loading: boolean,
 };
