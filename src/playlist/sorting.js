@@ -7,7 +7,17 @@ import {
     reorderPlaylistTracks,
 } from 'spotify-web-sdk';
 
-const sortPlaylistTracksByAttribute = async (
+export const sortingAttributes = [
+    { description: 'name', attribute: 'track.name' },
+    { description: 'artist name', attribute: 'addedAt' },
+    { description: 'album name', attribute: 'track.albumName' },
+    { description: 'length', attribute: 'track.durationMs' },
+    { description: 'release date', attribute: 'track.album.releaseDate' },
+    { description: 'popularity', attribute: 'track.popularity' },
+    { description: 'addition date', attribute: 'track.album.releaseDate' },
+];
+
+export const sortPlaylistTracksByAttribute = async (
     playlistId: string,
     limit: number,
     attribute: string
@@ -28,7 +38,7 @@ const getInsertionOrder = async (
     const playlistTracks = await getPlaylistTracks(playlistId, { limit });
     const trackRefs = playlistTracks.items.map((item, index) => ({
         playlistIndex: index,
-        attribute: _.get(item.track, attribute),
+        attribute: _.get(item, attribute),
     }));
     const sortedTrackRefs = _.sortBy(trackRefs, 'attribute').reverse();
     const insertionOrder = sortedTrackRefs.map(
@@ -48,5 +58,3 @@ const updateIndexes = (array: number[]) => {
 
 const moveTrackToTop = (id: string, indexOld: number) =>
     reorderPlaylistTracks(id, indexOld, { rangeLength: 1, insertBefore: 0 });
-
-export default sortPlaylistTracksByAttribute;
