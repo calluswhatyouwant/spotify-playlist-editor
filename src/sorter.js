@@ -1,8 +1,14 @@
 import _ from 'lodash';
-import { init, getPlaylistTracks, reorderPlaylistTracks } from 'spotify-web-sdk';
+import {
+    init,
+    getPlaylistTracks,
+    reorderPlaylistTracks,
+} from 'spotify-web-sdk';
 
 const sortPlaylistTracksByAttribute = async (
-    playlistId: string, limit: number, attribute: string
+    playlistId: string,
+    limit: number,
+    attribute: string
 ) => {
     init({ token: localStorage.getItem('token') });
     let insertionOrder = await getInsertionOrder(playlistId, limit, attribute);
@@ -13,14 +19,19 @@ const sortPlaylistTracksByAttribute = async (
 };
 
 const getInsertionOrder = async (
-    playlistId: string, limit: number, attribute: string
+    playlistId: string,
+    limit: number,
+    attribute: string
 ) => {
     const playlistTracks = await getPlaylistTracks(playlistId, { limit });
-    const trackRefs = playlistTracks.items.map((item, index) =>
-        ({ playlistIndex: index, attribute: _.get(item.track, attribute) }));
+    const trackRefs = playlistTracks.items.map((item, index) => ({
+        playlistIndex: index,
+        attribute: _.get(item.track, attribute),
+    }));
     const sortedTrackRefs = _.sortBy(trackRefs, 'attribute').reverse();
-    const insertionOrder = sortedTrackRefs
-        .map(trackRef => trackRef.playlistIndex);
+    const insertionOrder = sortedTrackRefs.map(
+        trackRef => trackRef.playlistIndex
+    );
     return updateIndexes(insertionOrder);
 };
 

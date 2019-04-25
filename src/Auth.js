@@ -5,7 +5,9 @@ class Auth extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            token: props.history.location.hash.match('[#&]access_token=([^&]*)')[1]
+            token: props.history.location.hash.match(
+                '[#&]access_token=([^&]*)'
+            )[1],
         };
     }
 
@@ -14,10 +16,11 @@ class Auth extends Component {
     }
 
     render() {
-        if (this.state.token)
+        if (this.state.token) {
             return <Redirect to="/playlists" />;
-        else
+        } else {
             return <Redirect to="/" />;
+        }
     }
 }
 
