@@ -4,8 +4,9 @@ import React, { Component } from 'react';
 import { init, getPlaylist, Playlist } from 'spotify-web-sdk';
 
 import PlaylistTrackList from './PlaylistTrackList';
+import PlaylistSortDropdownMenu from './PlaylistSortDropdownMenu';
 
-import sortPlaylistTracksByAttribute from './sorter';
+import { sortPlaylistTracksByAttribute } from './sorting';
 
 type Props = {
     match: any,
@@ -34,13 +35,13 @@ class PlaylistPage extends Component<Props, State> {
         );
     }
 
-    handleClick = async () => {
+    handleClick = (attribute: string) => {
         const { playlist, playlistId } = this.state;
         this.setState({ loading: true });
         sortPlaylistTracksByAttribute(
             playlistId,
             playlist.totalTracks,
-            'name'
+            attribute
         ).then(() =>
             getPlaylist(playlistId).then(playlist =>
                 this.setState({ playlist, loading: false })
@@ -50,15 +51,11 @@ class PlaylistPage extends Component<Props, State> {
 
     render() {
         const { playlist, loading } = this.state;
+
         return playlist.name ? (
             <div className="user-playlists-page container my-4 p-4 shadow">
                 <h1 className="mb-4">{playlist.name}</h1>
-                <button
-                    className="btn btn-dark mr-2"
-                    onClick={this.handleClick}
-                >
-                    Sort by track name
-                </button>
+                <PlaylistSortDropdownMenu handleClick={this.handleClick} />
                 <PlaylistTrackList
                     loading={loading}
                     tracks={playlist.tracks.items}
