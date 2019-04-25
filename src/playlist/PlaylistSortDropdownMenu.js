@@ -28,7 +28,7 @@ const PlaylistSortDropdownMenu = ({ handleClick }: Props) => {
                 aria-haspopup="true"
                 aria-expanded="false"
             >
-                Sort by
+                SORT PLAYLIST BY
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 {sortingButtons}
