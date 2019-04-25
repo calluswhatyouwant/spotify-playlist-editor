@@ -65,7 +65,7 @@ class UserPage extends Component<Props, State> {
         );
 
         return page.items ? (
-            <div className="user-playlists-page container my-4 p-4 shadow">
+            <div className="user-page container mb-4 p-4 shadow">
                 <UserPageHeader user={user} />
                 <UserPlaylistList
                     playlists={userPlaylists}

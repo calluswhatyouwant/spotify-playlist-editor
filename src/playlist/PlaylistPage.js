@@ -8,6 +8,8 @@ import PlaylistSortDropdownMenu from './PlaylistSortDropdownMenu';
 
 import { sortPlaylistTracksByAttribute } from './sorting';
 
+import './PlaylistPage.css';
+
 type Props = {
     match: any,
 };
@@ -53,7 +55,7 @@ class PlaylistPage extends Component<Props, State> {
         const { playlist, loading } = this.state;
 
         return playlist.name ? (
-            <div className="user-playlists-page container my-4 p-4 shadow">
+            <div className="playlist-page container mb-4 p-4 shadow">
                 <h1 className="mb-4">{playlist.name}</h1>
                 <PlaylistSortDropdownMenu handleClick={this.handleClick} />
                 <PlaylistTrackList

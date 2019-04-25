@@ -7,9 +7,11 @@ import Home from '../home/Home';
 import Auth from './Auth';
 import PlaylistPage from '../playlist/PlaylistPage';
 import UserPage from '../user/UserPage';
+import Navbar from './Navbar';
 
 const App = () => (
     <BrowserRouter>
+        <Navbar />
         <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/auth" component={Auth} />

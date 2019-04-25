@@ -8,3 +8,9 @@
     border: .25rem solid #473673;
     margin: 0 auto;
 }
+
+.user-page {
+    background-color: white;
+    border-radius: .25rem;
+    margin-top: 5rem;
+}
