@@ -28,9 +28,12 @@ const buildAuthUrl = () => {
     const params = {
         client_id: '77edb9a2465445fc8b366da5105e7add',
         response_type: 'token',
-        redirect_uri: 'http://localhost:3000/auth',
-        scope:
-            'playlist-read-private playlist-read-collaborative playlist-modify-public playlist-modify-private',
+        redirect_uri:
+            process.env.NODE_ENV === 'development'
+                ? 'http://localhost:3000/auth'
+                : 'https://calluswhatyouwant.github.io/spotify-playlist-editor/auth',
+        scope: `playlist-read-private playlist-read-collaborative playlist-modify-public
+            playlist-modify-private user-read-recently-played user-top-read`,
     };
     return `https://accounts.spotify.com/authorize?${encodeQueryParams(
         params
