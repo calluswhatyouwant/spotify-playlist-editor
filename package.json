@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "flow-bin": "^0.97.0",
+    "gh-pages": "^2.0.1",
     "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -12,6 +13,7 @@
     "spotify-web-sdk": "^0.5.0"
   },
   "scripts": {
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -33,5 +35,6 @@
     "trailingComma": "es5",
     "tabWidth": 4,
     "singleQuote": true
-  }
+  },
+  "homepage": "https://calluswhatyouwant.github.io/spotify-playlist-editor"
 }
