@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/spotify-playlist-editor/static/js/runtime~main.1a7e21be.js"
   },
   {
-    "revision": "e858f8498bc990cbf7b8",
-    "url": "/spotify-playlist-editor/static/js/main.c0599939.chunk.js"
+    "revision": "58ac81a4d125adffed9f",
+    "url": "/spotify-playlist-editor/static/js/main.c64dbf0c.chunk.js"
   },
   {
     "revision": "4177e98c28a3abf2774a",
     "url": "/spotify-playlist-editor/static/js/2.80c07fdd.chunk.js"
   },
   {
-    "revision": "e858f8498bc990cbf7b8",
+    "revision": "58ac81a4d125adffed9f",
     "url": "/spotify-playlist-editor/static/css/main.ec998e34.chunk.css"
   },
   {
-    "revision": "1994c4424b1c70dadc6e4bb3f54f3983",
+    "revision": "f58df23854946cd0124600febfe335e8",
     "url": "/spotify-playlist-editor/index.html"
   }
 ];
