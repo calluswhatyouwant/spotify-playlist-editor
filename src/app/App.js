@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Home from '../home/Home';
 import Auth from './Auth';
@@ -10,7 +10,7 @@ import UserPage from '../user/UserPage';
 import Navbar from './Navbar';
 
 const App = () => (
-    <BrowserRouter>
+    <>
         <Navbar />
         <Switch>
             <Route exact path="/" component={Home} />
@@ -18,7 +18,7 @@ const App = () => (
             <Route exact path="/playlists" component={UserPage} />
             <Route exact path="/playlists/:id" component={PlaylistPage} />
         </Switch>
-    </BrowserRouter>
+    </>
 );
 
 export default App;
