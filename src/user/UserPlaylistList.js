@@ -1,6 +1,7 @@
 /* @flow */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { PlaylistSimplified } from 'spotify-web-sdk';
 
 import './UserPlaylistList.css';
@@ -44,12 +45,12 @@ const UserPlaylistListItem = ({ playlist }: ItemProps) => (
     <div className="user-playlist">
         <h4>
             {playlist.name}
-            <a
-                href={`/playlists/${playlist.id}`}
+            <Link
                 className="badge badge-pill badge-dark mx-1"
+                to={`/playlists/${playlist.id}`}
             >
                 SORT / MANAGE
-            </a>
+            </Link>
         </h4>
         <h5>
             <span className="badge badge-info mr-1">

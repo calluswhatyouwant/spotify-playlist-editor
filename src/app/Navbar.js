@@ -1,14 +1,15 @@
 /* @flow */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => (
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <Link className="navbar-brand" to="/">
             Spotify Playlist Editor
-        </a>
+        </Link>
         <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -16,19 +17,19 @@ const Navbar = () => (
             aria-expanded="false"
             aria-label="Toggle navigation"
         >
-            <span class="navbar-toggler-icon" />
+            <span className="navbar-toggler-icon" />
         </button>
         <NavbarContent />
     </nav>
 );
 
 const NavbarContent = () => (
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/playlists">
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+                <Link className="nav-link" to="/playlists">
                     Playlists
-                </a>
+                </Link>
             </li>
         </ul>
     </div>
