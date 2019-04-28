@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/spotify-playlist-editor/static/css/main.fb4b5d14.chunk.css"
   },
   {
-    "revision": "11ac583e837949c16e568baaf96879e5",
+    "revision": "66eae006f9aafdeb0389487d5992829f",
     "url": "/spotify-playlist-editor/index.html"
   }
 ];
