@@ -10,6 +10,8 @@ import {
     PrivateUser,
 } from 'spotify-web-sdk';
 
+import UserPageHeader from './UserPageHeader';
+import UserPlaylistCreationPageSection from './UserPlaylistCreationPageSection';
 import UserPlaylistList from './UserPlaylistList';
 
 import './UserPage.css';
@@ -67,6 +69,7 @@ class UserPage extends Component<Props, State> {
         return page.items ? (
             <div className="user-page container mb-4 p-4 shadow">
                 <UserPageHeader user={user} />
+                <UserPlaylistCreationPageSection />
                 <UserPlaylistList
                     playlists={userPlaylists}
                     handleClick={this.loadMorePlaylists}
@@ -76,24 +79,5 @@ class UserPage extends Component<Props, State> {
         ) : null;
     }
 }
-
-type HeaderProps = {
-    user: PrivateUser,
-};
-
-const UserPageHeader = ({ user }: HeaderProps) => (
-    <div class="user-page-header media p-3">
-        <img
-            src={user.images[0].url}
-            alt="Avatar"
-            className="user-image rounded-circle align-self-center"
-        />
-        <div class="media-body align-self-center">
-            <h1 className="text-center py-4 display-4">
-                Welcome, {user.displayName}!
-            </h1>
-        </div>
-    </div>
-);
 
 export default UserPage;
