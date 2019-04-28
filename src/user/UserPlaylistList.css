@@ -2,11 +2,11 @@
     border-radius: 2rem;
 }
 
-.load-more-button {
+.btn-purple {
     background-color: #57428C;
 }
 
-.load-more-button-wrapper {
+.center-wrapper {
     display: flex;
     justify-content: center;
 }
