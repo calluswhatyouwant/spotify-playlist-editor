@@ -37,13 +37,11 @@ const getInsertionOrder = async (
 ) => {
     const playlistTracks = await getPlaylistTracks(playlistId, { limit });
     const trackRefs = playlistTracks.items.map((item, index) => ({
-        playlistIndex: index,
+        index,
         attribute: _.get(item, attribute),
     }));
     const sortedTrackRefs = _.sortBy(trackRefs, 'attribute').reverse();
-    const insertionOrder = sortedTrackRefs.map(
-        trackRef => trackRef.playlistIndex
-    );
+    const insertionOrder = sortedTrackRefs.map(trackRef => trackRef.index);
     return updateIndexes(insertionOrder);
 };
 
@@ -56,5 +54,5 @@ const updateIndexes = (array: number[]) => {
     return array;
 };
 
-const moveTrackToTop = (id: string, indexOld: number) =>
-    reorderPlaylistTracks(id, indexOld, { rangeLength: 1, insertBefore: 0 });
+const moveTrackToTop = (id: string, oldIndex: number) =>
+    reorderPlaylistTracks(id, oldIndex, { rangeLength: 1, insertBefore: 0 });
