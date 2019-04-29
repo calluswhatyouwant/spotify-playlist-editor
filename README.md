@@ -1,6 +1,8 @@
 # Spotify Playlist Editor
 
-Sort your Spotify playlists anyway you want!
+Sort your Spotify playlists anyway you want! 🛠
+
+![Initial page](./main-page.png)
 
 ## Table of Contents
 
