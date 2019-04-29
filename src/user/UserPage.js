@@ -36,28 +36,24 @@ class UserPage extends Component<Props, State> {
         };
     }
 
-    componentDidMount() {
+    componentDidMount = async () => {
         init({ token: localStorage.getItem('token') });
-        getCurrentUserPlaylists({ limit: 5 }).then(page =>
-            this.setState({
-                page,
-                playlists: page.items,
-            })
-        );
-        getCurrentUserProfile().then(user =>
-            this.setState({
-                user,
-            })
-        );
-    }
+        const page = await getCurrentUserPlaylists({ limit: 5 });
+        const user = await getCurrentUserProfile();
+        this.setState({
+            page,
+            user,
+            playlists: page.items,
+        });
+    };
 
-    loadMorePlaylists = () => {
-        this.state.page.getNextPage().then(nextPage =>
-            this.setState(prevState => {
-                const playlists = prevState.playlists.concat(nextPage.items);
-                return { page: nextPage, playlists };
-            })
-        );
+    loadMorePlaylists = async () => {
+        const { page } = this.state;
+        const nextPage = await page.getNextPage();
+        this.setState(prevState => {
+            const playlists = prevState.playlists.concat(nextPage.items);
+            return { playlists, page: nextPage };
+        });
     };
 
     render() {
