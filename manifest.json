@@ -1,6 +1,7 @@
 {
      "short_name": "Playlist Editor",
      "name": "Spotify Playlist Editor",
+     "description": "Sort your playlists anyway you want!",
      "start_url": "./index.html",
      "display": "standalone",
      "theme_color": "#000000",

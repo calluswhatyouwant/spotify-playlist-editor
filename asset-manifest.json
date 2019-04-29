@@ -1,13 +1,13 @@
 {
   "main.css": "/spotify-playlist-editor/static/css/main.fb4b5d14.chunk.css",
-  "main.js": "/spotify-playlist-editor/static/js/main.e91a1f65.chunk.js",
-  "main.js.map": "/spotify-playlist-editor/static/js/main.e91a1f65.chunk.js.map",
+  "main.js": "/spotify-playlist-editor/static/js/main.8a1f0cef.chunk.js",
+  "main.js.map": "/spotify-playlist-editor/static/js/main.8a1f0cef.chunk.js.map",
   "runtime~main.js": "/spotify-playlist-editor/static/js/runtime~main.1a7e21be.js",
   "runtime~main.js.map": "/spotify-playlist-editor/static/js/runtime~main.1a7e21be.js.map",
   "static/js/2.cbb3faac.chunk.js": "/spotify-playlist-editor/static/js/2.cbb3faac.chunk.js",
   "static/js/2.cbb3faac.chunk.js.map": "/spotify-playlist-editor/static/js/2.cbb3faac.chunk.js.map",
   "index.html": "/spotify-playlist-editor/index.html",
-  "precache-manifest.d50694061777808fe3b63391a6bab76b.js": "/spotify-playlist-editor/precache-manifest.d50694061777808fe3b63391a6bab76b.js",
+  "precache-manifest.b03f5630bc52fad07667339c19e5c329.js": "/spotify-playlist-editor/precache-manifest.b03f5630bc52fad07667339c19e5c329.js",
   "service-worker.js": "/spotify-playlist-editor/service-worker.js",
   "static/css/main.fb4b5d14.chunk.css.map": "/spotify-playlist-editor/static/css/main.fb4b5d14.chunk.css.map"
 }
