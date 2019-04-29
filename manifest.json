@@ -1,13 +1,6 @@
 {
      "short_name": "Playlist Editor",
      "name": "Spotify Playlist Editor",
-     "icons": [
-          {
-               "src": "%PUBLIC_URL%/favicon.ico",
-               "sizes": "192x192",
-               "type": "image/png"
-          }
-     ],
      "start_url": "./index.html",
      "display": "standalone",
      "theme_color": "#000000",
