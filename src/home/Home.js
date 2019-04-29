@@ -6,22 +6,36 @@ import './Home.css';
 
 const Home = () => (
     <div className="home">
-        <div className="text-center">
+        <div className="container text-center">
             <h1 className="display-1">Spotify Playlist Editor</h1>
             <h4>Sort your playlists any way you want.</h4>
-            <h5>
-                <i className="fas fa-exclamation-triangle" /> Note this is still a
-                work in progress, so use it with caution.{' '}
-                <i className="fas fa-exclamation-triangle" />
-            </h5>
-            <a
-                className="btn btn-lg btn-outline-light my-2"
+            <p>
+                Note this is still a work in progress, so use it with caution!
+            </p>
+            <SocialButton
                 href={buildAuthUrl()}
-            >
-                Connect to Spotify
-            </a>
+                text="Connect to Spotify"
+                type="spotify"
+            />
+            <SocialButton
+                href="https://github.com/calluswhatyouwant/spotify-playlist-editor"
+                text="Source code"
+                type="github"
+            />
         </div>
     </div>
+);
+
+type SocialButtonProps = {
+    href: string,
+    text: string,
+    type: 'spotify' | 'github',
+};
+
+const SocialButton = ({ href, text, type }: SocialButtonProps) => (
+    <a className="btn btn-lg btn-outline-light my-2 mx-1" href={href}>
+        <i className={`fab fa-${type}`} /> {text}
+    </a>
 );
 
 const buildAuthUrl = () => {
