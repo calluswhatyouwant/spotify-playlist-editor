@@ -8,13 +8,13 @@ type HeaderProps = {
 };
 
 const UserPageHeader = ({ user }: HeaderProps) => (
-    <div class="user-page-header media p-3">
+    <div className="user-page-header media p-3">
         <img
             src={user.images ? user.images[0].url : ''}
             alt="Avatar"
             className="user-image rounded-circle align-self-center"
         />
-        <div class="media-body align-self-center">
+        <div className="media-body align-self-center">
             <h1 className="text-center py-4 display-4">
                 Welcome, {user.displayName}!
             </h1>

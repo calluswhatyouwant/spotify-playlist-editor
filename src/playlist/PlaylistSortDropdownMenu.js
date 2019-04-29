@@ -20,9 +20,9 @@ const PlaylistSortDropdownMenu = ({ handleClick }: Props) => {
         )
     );
     return (
-        <div class="dropdown">
+        <div className="dropdown">
             <button
-                class="btn btn-dark dropdown-toggle"
+                className="btn btn-dark dropdown-toggle"
                 id="dropdownMenuButton"
                 data-toggle="dropdown"
                 aria-haspopup="true"
@@ -30,7 +30,7 @@ const PlaylistSortDropdownMenu = ({ handleClick }: Props) => {
             >
                 SORT PLAYLIST BY
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 {sortingButtons}
             </div>
         </div>
