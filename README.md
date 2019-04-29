@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Spotify Playlist Editor
 
-## Available Scripts
+Sort your Spotify playlists anyway you want!
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+-   [Features](#features)
+-   [Community](#community)
+    -   [Installation and Usage](#installation-and-usage)
+    -   [Deployment](#deployment)
+    -   [Suggest a new feature or report a bug](#suggest-a-new-feature-or-report-a-bug)
+    -   [Maintainers](#maintainers)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- Create new playlists out of your recent Spotify tracks or your all-time top tracks;
+- Sort playlists based on:
+    - playlist track attributes (addition date);
+    - track attributes (name, length, popularity);
+    - album attributes (name, release date);
+    - artist attributes (name).
 
-### `npm test`
+### Current limitations
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- It's highly recommended to create a copy of the playlists you want to edit or to use one of the playlist creation options. (play around, but do it safely!);
+- You can only sort playlists with 100 tracks or less;
+- Sorting might take a while (a playlist with 100 tracks can take between 30 seconds and 1 minute). Do NOT reload or close the playlist page until sorting is over.
 
-### `npm run build`
+## Community
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation and Usage
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Simply run `yarn install` to install the project's dependencies and then run `yarn start` to run it in development mode. Alternatively, if you'd rather just try the application out, it is currently [deployed to GitHub Pages](https://calluswhatyouwant.github.io/spotify-playlist-editor).
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+To deploy the application to GitHub pages, run `yarn deploy`.
 
-### `npm run build` fails to minify
+### Suggest a new feature or report a bug
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Note that we have [issue templates](.github/ISSUE_TEMPLATE).
+
+### Maintainers
+
+[@JRobsonJr](http://github.com/JRobsonJr)
