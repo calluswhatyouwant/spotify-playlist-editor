@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/spotify-playlist-editor/precache-manifest.d50694061777808fe3b63391a6bab76b.js"
+  "/spotify-playlist-editor/precache-manifest.e49d0e1516bfcbb3371c6949fb537049.js"
 );
 
 workbox.clientsClaim();
