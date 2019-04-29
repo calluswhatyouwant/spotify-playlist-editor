@@ -9,12 +9,12 @@ import {
 
 export const sortingAttributes = [
     { description: 'name', attribute: 'track.name' },
-    { description: 'artist name', attribute: 'addedAt' },
+    { description: 'artist name', attribute: 'track.stringArtists' },
     { description: 'album name', attribute: 'track.albumName' },
     { description: 'length', attribute: 'track.durationMs' },
     { description: 'release date', attribute: 'track.album.releaseDate' },
     { description: 'popularity', attribute: 'track.popularity' },
-    { description: 'addition date', attribute: 'track.album.releaseDate' },
+    { description: 'addition date', attribute: 'addedAt' },
 ];
 
 export const sortPlaylistTracksByAttribute = async (
