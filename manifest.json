@@ -3,7 +3,7 @@
      "name": "Spotify Playlist Editor",
      "icons": [
           {
-               "src": "favicon.ico",
+               "src": "%PUBLIC_URL%/favicon.ico",
                "sizes": "192x192",
                "type": "image/png"
           }
