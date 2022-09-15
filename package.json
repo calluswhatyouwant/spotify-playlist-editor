@@ -30,6 +30,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/helper-builder-react-jsx": "^7.19.0",
+    "@babel/helper-regex": "^7.10.5",
     "prettier": "1.17.0"
   },
   "prettier": {
