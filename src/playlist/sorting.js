@@ -27,8 +27,8 @@ export const sortPlaylistTracksByAttribute = async (
     init({ token: localStorage.getItem('token') });
 
     let inverted = false;
-    if (attribute.contains(invert)) {
-        attribute = attribute.replace(invert, "");
+    if (attribute.includes(invert)) {
+        attribute = attribute.replace(invert, '');
         inverted = true;
     }
     let insertionOrder = await getInsertionOrder(playlistId, limit, attribute, inverted);
